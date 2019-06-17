@@ -14,6 +14,8 @@
 		4A4ECD4222B798D900E094EC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4A4ECD4022B798D900E094EC /* LaunchScreen.storyboard */; };
 		4A4ECD4D22B798DA00E094EC /* MVCTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A4ECD4C22B798DA00E094EC /* MVCTests.swift */; };
 		4A4ECD5822B798DA00E094EC /* MVCUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A4ECD5722B798DA00E094EC /* MVCUITests.swift */; };
+		4A4ECD6622B7AF5800E094EC /* Card.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A4ECD6522B7AF5800E094EC /* Card.swift */; };
+		4A4ECD6822B7AF8500E094EC /* Concentration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A4ECD6722B7AF8500E094EC /* Concentration.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +49,8 @@
 		4A4ECD5322B798DA00E094EC /* MVCUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MVCUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		4A4ECD5722B798DA00E094EC /* MVCUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MVCUITests.swift; sourceTree = "<group>"; };
 		4A4ECD5922B798DA00E094EC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4A4ECD6522B7AF5800E094EC /* Card.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Card.swift; sourceTree = "<group>"; };
+		4A4ECD6722B7AF8500E094EC /* Concentration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Concentration.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -100,6 +104,8 @@
 				4A4ECD3722B798D800E094EC /* AppDelegate.swift */,
 				4A4ECD3922B798D800E094EC /* ViewController.swift */,
 				4A4ECD3B22B798D800E094EC /* Main.storyboard */,
+				4A4ECD6522B7AF5800E094EC /* Card.swift */,
+				4A4ECD6722B7AF8500E094EC /* Concentration.swift */,
 				4A4ECD3E22B798D900E094EC /* Assets.xcassets */,
 				4A4ECD4022B798D900E094EC /* LaunchScreen.storyboard */,
 				4A4ECD4322B798D900E094EC /* Info.plist */,
@@ -257,6 +263,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				4A4ECD3A22B798D800E094EC /* ViewController.swift in Sources */,
+				4A4ECD6822B7AF8500E094EC /* Concentration.swift in Sources */,
+				4A4ECD6622B7AF5800E094EC /* Card.swift in Sources */,
 				4A4ECD3822B798D800E094EC /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
