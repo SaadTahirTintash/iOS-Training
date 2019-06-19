@@ -41,7 +41,7 @@ class FlickerPhotosCollectionViewController: UICollectionViewController {
   private let sectionInsets = UIEdgeInsets(top: 50, left: 20, bottom: 50, right: 20)
   private var searches: [FlickrSearchResults] = []
   private let flicker = Flickr()
-  private let itemsPerRow : CGFloat = 3
+  private let itemsPerRow : CGFloat = 3 
   
   // MARK: UICollectionViewDataSource
   
