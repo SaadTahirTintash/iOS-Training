@@ -28,9 +28,8 @@
 	
 import UIKit
 
-//url: https://www.flickr.com/services/rest/?method=flickr.photos.search&api_key=d59f06865fea2fc7a0fbdc870316aee0&text=bananas&format=rest&api_sig=dbbea60e3d7a7995e017cd5ff3b42b3e
-
-let apiKey = "d59f06865fea2fc7a0fbdc870316aee0"
+//url: https://www.flickr.com/services/rest/?method=flickr.photos.search&api_key=a15e5a20f6f306233c7a9105adb55b49&text=house&format=rest&api_sig=3c2ca4ee65fa0cbd561d385d5352cc14
+let apiKey = "a15e5a20f6f306233c7a9105adb55b49"
 
 class Flickr {
   enum Error: Swift.Error {

@@ -65,6 +65,7 @@ class FlickrPhoto: Equatable {
     
     let loadRequest = URLRequest(url:loadURL)
     
+    
     URLSession.shared.dataTask(with: loadRequest) { (data, response, error) in
       if let error = error {
         DispatchQueue.main.async {
