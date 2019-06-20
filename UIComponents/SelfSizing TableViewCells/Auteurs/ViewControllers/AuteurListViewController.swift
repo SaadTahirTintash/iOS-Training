@@ -37,6 +37,9 @@ class AuteurListViewController: UIViewController {
     
     navigationController?.navigationBar.largeTitleTextAttributes = [NSAttributedString.Key.font: UIFont.systemFont(ofSize: 34, weight: .bold) ]
     navigationItem.largeTitleDisplayMode = .automatic
+    
+    tableView.rowHeight = UITableView.automaticDimension
+    tableView.estimatedRowHeight = 600
   }
   
   override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -53,11 +56,21 @@ extension AuteurListViewController: UITableViewDataSource {
   }
  
   func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-    let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath)
+    let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath) as! AuteurTableViewCell
     let auteur = auteurs[indexPath.row]
+    cell.auteurImageView.image = UIImage(named: auteur.image)
+    cell.nameLabel.text = auteur.name
+    cell.bioLabel.text = auteur.bio
+    cell.sourceLabel.text = auteur.source
     
-    cell.textLabel?.text = auteur.bio
-        
+    cell.bioLabel.textColor = UIColor(red:0.75, green:0.75, blue:0.75, alpha:1.0)
+    cell.sourceLabel.textColor = UIColor(red:0.74, green:0.74, blue:0.74, alpha:1.0)
+    cell.sourceLabel.font = UIFont.italicSystemFont(ofSize: cell.sourceLabel.font.pointSize)
+    cell.nameLabel.textAlignment = .center
+    cell.selectionStyle = .none
+
+    cell.auteurImageView.layer.cornerRadius = cell.auteurImageView.frame.height / 2
+    
     return cell
   }
 }

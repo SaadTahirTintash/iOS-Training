@@ -37,6 +37,10 @@ class AuteurDetailViewController: UIViewController {
     super.viewDidLoad()
     title = selectedAuteur.name
     self.tableView.contentInsetAdjustmentBehavior = .never
+    
+    self.tableView.rowHeight = UITableView.automaticDimension
+    self.tableView.estimatedRowHeight = 300
+    
   }
 }
 
@@ -46,11 +50,37 @@ extension AuteurDetailViewController: UITableViewDataSource {
   }
   
   func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-    let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath)
+    let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath) as! FilmTableViewCell
     let film = selectedAuteur.films[indexPath.row]
-    cell.textLabel?.text = film.plot
+    cell.filmImageView.image = UIImage(named: film.poster)
+    cell.nameLabel.text = film.title
+    cell.nameLabel.textColor = .white
+    cell.nameLabel.textAlignment = .center
+    cell.moreTextView.textColor = .red
+    cell.selectionStyle = .none
     
     return cell
   }
+}
+
+extension AuteurDetailViewController: UITableViewDelegate{
+  func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+    guard let cell = tableView.cellForRow(at: indexPath) as? FilmTableViewCell else{
+      return
+    }
+    var film = selectedAuteur.films[indexPath.row]
+    film.isExpanded = !film.isExpanded
+    selectedAuteur.films[indexPath.row] = film
+    
+    cell.moreTextView.text = film.isExpanded ? film.plot : moreInfoText
+    cell.moreTextView.textAlignment = film.isExpanded ? .left : .center
+    cell.moreTextView.textColor = film.isExpanded ? UIColor(red:0.75, green:0.75, blue:0.75, alpha:1.0) : .red
+    
+    tableView.beginUpdates()
+    tableView.endUpdates()
+    
+    tableView.scrollToRow(at: indexPath, at: .top, animated: true)
+  }
+  
 }
 
