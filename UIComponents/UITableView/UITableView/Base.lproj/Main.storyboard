@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="gB0-5n-9e7">
     <device id="retina6_1" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -11,43 +11,49 @@
     </dependencies>
     <scenes>
         <!--View Controller-->
-        <scene sceneID="tne-QT-ifu">
+        <scene sceneID="bJQ-dj-ub0">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="UITableView" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                <viewController id="gB0-5n-9e7" customClass="ViewController" customModule="UITableView" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="7NS-8w-wgR">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="8ez-FH-bLd">
-                                <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="eWR-Ew-gm8">
+                                <rect key="frame" x="0.0" y="44" width="414" height="409"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="tableViewCell" id="61l-xP-Ot5" customClass="TableViewCell" customModule="UITableView" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="28" width="414" height="44"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="61l-xP-Ot5" id="leI-jc-edY">
-                                            <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                        </tableViewCellContentView>
-                                    </tableViewCell>
-                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="gB0-5n-9e7" id="UkD-7z-nQc"/>
+                                </connections>
+                            </tableView>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="f6D-MR-Kgp" userLabel="Table View Nib">
+                                <rect key="frame" x="0.0" y="453" width="414" height="409"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="gB0-5n-9e7" id="9FP-oI-G2B"/>
+                                </connections>
                             </tableView>
                         </subviews>
-                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="8ez-FH-bLd" secondAttribute="bottom" id="Jm5-pm-9dw"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="8ez-FH-bLd" secondAttribute="trailing" id="Lsf-lo-eY9"/>
-                            <constraint firstItem="8ez-FH-bLd" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="MLp-An-5yd"/>
-                            <constraint firstItem="8ez-FH-bLd" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="b5M-FA-qWU"/>
+                            <constraint firstItem="f6D-MR-Kgp" firstAttribute="trailing" secondItem="SMU-qY-gGq" secondAttribute="trailing" id="29p-ed-EOb"/>
+                            <constraint firstItem="f6D-MR-Kgp" firstAttribute="height" secondItem="eWR-Ew-gm8" secondAttribute="height" id="5Nu-yS-FRO"/>
+                            <constraint firstItem="eWR-Ew-gm8" firstAttribute="top" secondItem="SMU-qY-gGq" secondAttribute="top" id="GeM-w4-IC2"/>
+                            <constraint firstItem="eWR-Ew-gm8" firstAttribute="leading" secondItem="SMU-qY-gGq" secondAttribute="leading" id="aPR-44-Mv7"/>
+                            <constraint firstItem="eWR-Ew-gm8" firstAttribute="trailing" secondItem="SMU-qY-gGq" secondAttribute="trailing" id="ay1-ki-mtb"/>
+                            <constraint firstItem="f6D-MR-Kgp" firstAttribute="leading" secondItem="SMU-qY-gGq" secondAttribute="leading" id="gco-Ai-4Bd"/>
+                            <constraint firstItem="f6D-MR-Kgp" firstAttribute="top" secondItem="eWR-Ew-gm8" secondAttribute="bottom" id="jXl-wx-iFu"/>
+                            <constraint firstItem="SMU-qY-gGq" firstAttribute="bottom" secondItem="f6D-MR-Kgp" secondAttribute="bottom" id="kst-Jw-Ukf"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <viewLayoutGuide key="safeArea" id="SMU-qY-gGq"/>
                     </view>
                     <connections>
-                        <outlet property="tableView" destination="8ez-FH-bLd" id="m9h-4G-wd9"/>
+                        <outlet property="tableView" destination="eWR-Ew-gm8" id="F86-I8-XcW"/>
+                        <outlet property="tableViewNib" destination="f6D-MR-Kgp" id="ycG-Ww-CsL"/>
                     </connections>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="aF2-oE-jDh" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="15.942028985507248" y="47.544642857142854"/>
         </scene>
     </scenes>
 </document>

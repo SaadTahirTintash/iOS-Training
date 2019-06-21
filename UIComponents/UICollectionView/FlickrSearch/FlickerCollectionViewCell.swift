@@ -28,6 +28,8 @@
 
 import UIKit
 
+private var counter: Int = 0
+
 class FlickerCollectionViewCell: UICollectionViewCell {
     
   @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
@@ -43,6 +45,11 @@ class FlickerCollectionViewCell: UICollectionViewCell {
     super.awakeFromNib()
     imageView.layer.borderColor = themeColor.cgColor
     isSelected = false
+    counter += 1
+  }
+  
+  override func prepareForReuse() {
+    print("Preparing for reuse \(counter)")
   }
   
 }

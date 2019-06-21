@@ -291,6 +291,7 @@ extension FlickerPhotosCollectionViewController: UICollectionViewDelegateFlowLay
   }
 }
 
+//mark: UICollectionViewDelegate
 extension FlickerPhotosCollectionViewController{
   override func collectionView(_ collectionView: UICollectionView, shouldSelectItemAt indexPath: IndexPath) -> Bool {
     

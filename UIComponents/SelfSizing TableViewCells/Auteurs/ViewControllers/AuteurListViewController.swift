@@ -40,6 +40,7 @@ class AuteurListViewController: UIViewController {
     
     tableView.rowHeight = UITableView.automaticDimension
     tableView.estimatedRowHeight = 600
+    
   }
   
   override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -70,6 +71,9 @@ extension AuteurListViewController: UITableViewDataSource {
     cell.selectionStyle = .none
 
     cell.auteurImageView.layer.cornerRadius = cell.auteurImageView.frame.height / 2
+    
+//    tableView.contentSize.height += 100
+//    print(tableView.contentSize)
     
     return cell
   }

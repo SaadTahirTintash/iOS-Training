@@ -8,36 +8,80 @@
 
 import UIKit
 
-class ViewController: UIViewController, UITableViewDataSource {
+class ViewController: UIViewController {
     
-
+    var items = [Int]()
     @IBOutlet weak var tableView: UITableView!
-    var data = [String]()
+    @IBOutlet weak var tableViewNib: UITableView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
-        for i in -100...(-1){
-            data.append("\(i)")
+        tableViewNib.register(UINib(nibName: "TableViewCell", bundle: nil), forCellReuseIdentifier: "TableViewCell")
+        for i in 0...100{
+            items.append(i)
         }
-        tableView.dataSource = self
     }
     
-    func numberOfSections(in tableView: UITableView) -> Int {
-        return 1
-    }
+}
 
+extension ViewController: UITableViewDataSource{
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return data.count
+        if tableView == self.tableView{
+            return items.count/2
+        } else if tableView == self.tableViewNib{
+            return items.count
+        }
+        return 1
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "tableViewCell")!
-        let text = data[indexPath.row]
-        cell.textLabel?.text = text
-        return cell
+        
+        if tableView == self.tableView{
+            if let cell = tableView.dequeueReusableCell(withIdentifier: "MyCell") as? AnotherTableViewCell {
+                cell.textLabel?.text = "\(items[indexPath.row])"
+                return cell
+            } else {
+                let cell = AnotherTableViewCell(style: .default, reuseIdentifier: "MyCell")
+                cell.textLabel?.text = "\(items[indexPath.row])"
+                return cell
+            }
+        } else if tableView == self.tableViewNib{
+            if let cell = tableViewNib.dequeueReusableCell(withIdentifier: "TableViewCell") as? TableViewCell {
+                cell.label.text = "Nib: \(items[indexPath.row])"
+                return cell
+            } else {
+                let cell = TableViewCell(style: .default, reuseIdentifier: "TableViewCell")
+                cell.label.text = "Nib: \(items[indexPath.row])"
+                return cell
+            }
+        }
+        
+        return UITableViewCell()
     }
     
+    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        if tableView == self.tableView{
+            return "My Table View Cells Header"
+        }
+        else if tableView == self.tableViewNib{
+            return "My Nib Based Table View Cells Header"
+        }
+        return "Table Views Header"
+    }
+    
+    func tableView(_ tableView: UITableView, titleForFooterInSection section: Int) -> String? {
+        if tableView == self.tableView{
+            return "My Table View Cells Footer"
+        }
+        else if tableView == self.tableViewNib{
+            return "My Nib Based Table View Cells Footer"
+        }
+        return "Table Views Footer"
+    }
+}
 
+extension ViewController: UITableViewDelegate{
+    
 }
 

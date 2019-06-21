@@ -1,5 +1,5 @@
 //
-//  TableViewCell.swift
+//  AnotherTableViewCell.swift
 //  UITableView
 //
 //  Created by Tintash on 21/06/2019.
@@ -8,24 +8,29 @@
 
 import UIKit
 
-class TableViewCell: UITableViewCell {
-    
-    @IBOutlet weak var label: UILabel!
+class AnotherTableViewCell: UITableViewCell {
 
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
-        print("I am initializing a cell for reuse")
+        print("AnotherCell is initialized")
     }
     
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
-        print("I am initializing a cell coder")
+        print("AnotherCell is initialized with coder")
     }
+    
     
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
-        print("awake from nib")
+        print("AnotherCell is awaken from nib")
     }
     
+    override func prepareForReuse() {
+        super.prepareForReuse()
+        print("Preparing anothercell for reuse")
+        print(self.textLabel?.text)
+    }
+
 }

@@ -53,7 +53,6 @@
 				AFCDBA41218F9F7800B1C80C /* FlickrSearchResults.swift */,
 				AFCDBA42218F9F7800B1C80C /* FlickrPhoto.swift */,
 				AFCDBA43218F9F7800B1C80C /* Flickr.swift */,
-				4A1EFBE322BB675A00918298 /* FlickerPhotoHeaderView.swift */,
 				AF215EE22194B68100B18466 /* Result.swift */,
 			);
 			path = FlickrFiles;
@@ -83,6 +82,7 @@
 				AFCDBA40218F9F7800B1C80C /* FlickrFiles */,
 				D2A5F2201F4A96D0005CD714 /* AppDelegate.swift */,
 				D2A5F2071F4A9144005CD714 /* Main.storyboard */,
+				4A1EFBE322BB675A00918298 /* FlickerPhotoHeaderView.swift */,
 				4A15992C22BA4AE70016E51D /* FlickerCollectionViewCell.swift */,
 				4A15992A22BA3FC40016E51D /* FlickerPhotosCollectionViewController.swift */,
 				D2A5F20A1F4A9144005CD714 /* Assets.xcassets */,
