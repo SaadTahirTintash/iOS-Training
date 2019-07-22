@@ -35,7 +35,7 @@ class ViewController: UIViewController {
 }
 
 
-let imageCache = NSCache<AnyObject,AnyObject>()
+let imageCache = NSCache<NSString,UIImage>()
 
 extension UIImageView{
     
@@ -45,21 +45,23 @@ extension UIImageView{
         self.image = nil
         
         //do we have an image present in the cache for a certain key?
-        if let imageForCache = imageCache.object(forKey: urlString as AnyObject) as? UIImage{
+        if let imageForCache = imageCache.object(forKey: urlString as NSString){
             self.image = imageForCache
             return
         }
         
         //create a url request for image and then cache it
         URLSession.shared.dataTask(with: url!) { (data, response, error) in
-            if let response = data{
+            if data != nil{
                 DispatchQueue.main.async {
                     let imageToCache = UIImage(data: data!)
-                    imageCache.setObject(imageToCache!, forKey: urlString as AnyObject)
+                    if let cachedImage = imageToCache{
+                        imageCache.setObject(cachedImage, forKey: urlString as NSString)
+                    }
                     self.image = imageToCache
                 }
             }
-            }.resume()
+        }.resume()
         
     }
     

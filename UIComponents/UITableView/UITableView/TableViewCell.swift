@@ -11,7 +11,9 @@ import UIKit
 class TableViewCell: UITableViewCell {
     
     @IBOutlet weak var label: UILabel!
-
+    @IBOutlet weak var label2: UILabel!
+    @IBOutlet weak var label3: UILabel!
+    
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         print("I am initializing a cell for reuse")

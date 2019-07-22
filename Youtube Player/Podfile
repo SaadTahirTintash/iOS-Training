@@ -1,0 +1,25 @@
+# Uncomment the next line to define a global platform for your project
+# platform :ios, '9.0'
+
+target 'Youtube Player' do
+  # Comment the next line if you don't want to use dynamic frameworks
+  use_frameworks!
+
+  # Pods for Youtube Player
+
+  pod "YoutubePlayer-in-WKWebView", "~> 0.2.0" 
+  pod ‘youtube-ios-player-helper’, ‘~> 0.1’
+  pod 'InlineYoutubeView'
+
+
+  target 'Youtube PlayerTests' do
+    inherit! :search_paths
+    # Pods for testing
+  end
+
+  target 'Youtube PlayerUITests' do
+    inherit! :search_paths
+    # Pods for testing
+  end
+
+end
